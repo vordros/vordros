@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Vordros — At the core of motion</title>
+  <meta name="description" content="Technology, processes and people synchronized to deliver extraordinary results. Vordros is where everything converges." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical: root redirects, canonical points to default version -->
+  <link rel="canonical" href="https://vordros.com/en-us/" />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://vordros.com/pt-br/" />
+  <link rel="alternate" hreflang="en"    href="https://vordros.com/en-us/" />
+  <link rel="alternate" hreflang="x-default" href="https://vordros.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Vordros" />
+  <meta property="og:title"       content="Vordros — At the core of motion" />
+  <meta property="og:description" content="Technology, processes and people synchronized to deliver extraordinary results." />
+  <meta property="og:url"         content="https://vordros.com/" />
+  <meta property="og:image"       content="https://vordros.com/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@vordros" />
+  <meta name="twitter:title"       content="Vordros — At the core of motion" />
+  <meta name="twitter:description" content="Technology, processes and people synchronized to deliver extraordinary results." />
+  <meta name="twitter:image"       content="https://vordros.com/images/og-image.png" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230D0E12'/><line x1='4' y1='6' x2='22' y2='16' stroke='%23C6FF00' stroke-width='2.5' stroke-linecap='round'/><line x1='4' y1='26' x2='22' y2='16' stroke='%23C6FF00' stroke-width='2.5' stroke-linecap='round'/></svg>" />
+
+  <style>
+    body { margin: 0; background: #0D0E12; }
+  </style>
+</head>
+<body>
+  <script>
+    // Detect language and redirect to the correct version
+    (function () {
+      // 1. localStorage
+      var stored = localStorage.getItem("vordros_lang");
+      if (stored === "pt-BR") { window.location.replace("./pt-br/"); return; }
+      if (stored === "en-US") { window.location.replace("./en-us/"); return; }
+
+      // 2. Browser language
+      var langs = Array.from(navigator.languages || [navigator.language || "en"]);
+      for (var i = 0; i < langs.length; i++) {
+        if (langs[i].toLowerCase().startsWith("pt")) {
+          window.location.replace("./pt-br/");
+          return;
+        }
+      }
+
+      // 3. Default → EN-US
+      window.location.replace("./en-us/");
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=./en-us/" />
+    <p>Redirecting... <a href="./en-us/">Click here if not redirected.</a></p>
+  </noscript>
+</body>
+</html>
